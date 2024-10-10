@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h3 class="text-center mt-5">Dettaglio Post {{ post.id }}</h3>
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.body }}</p>
+          <p *ngFor="let tag of post.tags">{{ tag }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

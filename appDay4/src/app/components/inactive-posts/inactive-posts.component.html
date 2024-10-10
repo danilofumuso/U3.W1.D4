@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <h3 class="text-center mt-5">Questi Post Sono Inattivi</h3>
+    <div class="col col-12 col-lg-3" *ngFor="let post of posts">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.body }}</p>
+          <p *ngFor="let tag of post.tags">{{ tag }}</p>
+          <a
+            [routerLink]="['/post-details', post.id]"
+            class="btn btn-outline-primary"
+            >Details</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

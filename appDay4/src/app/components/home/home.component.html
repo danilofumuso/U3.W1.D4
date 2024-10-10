@@ -1,0 +1,41 @@
+<!-- con *ngIf dico che se il post esiste allora crea la struttura! mi elimina l'errore in console -->
+<div class="container" *ngIf="posts[indexRandom]">
+  <div class="row justify-content-center">
+    <div class="col col-6">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h5 class="card-title">{{ posts[indexRandom].title }}</h5>
+          <p class="card-text">
+            {{ posts[indexRandom].body }}
+          </p>
+          <p *ngFor="let tag of posts[indexRandom].tags">{{ tag }}</p>
+          <a
+            [routerLink]="['/post-details', posts[indexRandom].id]"
+            class="btn btn-outline-primary"
+            >Details</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <h3 class="text-center mt-5">Potrebbero piacerti questi post</h3>
+    <div class="col col-3" *ngFor="let post of shuffledPosts.slice(0, 4)">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.body }}</p>
+          <p *ngFor="let tag of post.tags">{{ tag }}</p>
+          <a
+            [routerLink]="['/post-details', post.id]"
+            class="btn btn-outline-primary"
+            >Details</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
