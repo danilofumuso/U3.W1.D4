@@ -20,7 +20,7 @@ export class ActivePostsComponent implements OnInit {
         }
       })
       .then((data) => {
-        this.posts = data.posts.filter((post) => post.active === true);
+        this.posts = data.posts.filter((post) => post.active); //equivale a post.active === true
       })
       .catch((err) => {
         console.log('Error', err);
