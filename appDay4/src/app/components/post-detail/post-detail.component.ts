@@ -25,12 +25,13 @@ export class PostDetailComponent {
       })
       .then((data) => {
         this.posts = data.posts;
+
         this.route.params.subscribe((params: any) => {
-          const clicked = this.posts.find(
+          const found = this.posts.find(
             (post) => post.id === parseInt(params.id)
           );
-          if (clicked) {
-            this.post = clicked;
+          if (found) {
+            this.post = found;
           } else {
             console.log('Not found');
           }
